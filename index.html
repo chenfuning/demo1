@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>24秒糖果店</title>
+
+		<link rel="stylesheet" href="js/jquery-ui.min.css" />
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/jquijs.js"></script>
+		<script type="text/javascript">
+			function getParam() {
+				var urlInfo = window.location.href; //获取当前页面的url  
+				var intLen = urlInfo.length; //获取url的长度  
+				var offset = urlInfo.indexOf("?"); //设置参数字符串开始的位置  
+				var strKeyValue = urlInfo.substr(offset, intLen); //取出参数字符串 这里会获得类似“id=1”这样的字符串  
+				var arrParam = strKeyValue.split("="); //对获得的参数字符串按照“=”进行分割  
+				var strParamValue = arrParam[1]; //得到参数值  
+				alert("您要传递的参数值是" + strParamValue);
+				return strParamValue;
+			}
+
+			function f() {
+				window.location.href = "main.html";
+			}
+		</script>
+
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+		<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="jqueryui/style.css">
+		<script>
+			$(function() {
+				$("#dialog").dialog({
+					autoOpen: false,
+					show: {
+						effect: "blind",
+						duration: 1000
+					},
+					hide: {
+						effect: "explode",
+						duration: 1000
+					}
+				});
+
+				$("#opener").click(function() {
+					$("#dialog").dialog("open");
+				});
+			});
+		</script>
+
+		<style type="text/css">
+			#a_btn {
+				margin-top: 30px;
+				margin-bottom: 30px;
+				margin-left: 30px;
+			}
+			
+			#b_btn {
+				margin-top: 30px;
+				margin-bottom: 30px;
+				margin-left: 30px;
+			}
+			
+			#opener {
+				margin-top: 30px;
+				margin-bottom: 30px;
+				margin-left: 30px;
+			}
+			
+			#main {}
+			
+			body {
+				text-align: center;
+			}
+			
+			img {
+				margin-left: 18%;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<!--<script src="http://stat.api.4399.com/h5api/h5api.php">
+	</script>-->
+		<!--<script type="text/javascript">
+		document.body.onload=gogogo;
+		function gogogo(){
+		h5api.initGame("100051549", "24秒糖果屋",800, 600);
+		h5api.moreGame();
+		}
+	</script>-->
+		<div id="main" style="background:url(img/background1.jpg);width: 100%;height: 600px;">
+			<!--<h2>24秒糖果店</h2>-->
+			<img src="img/title.png" width="50%" height="100" /></br>
+			<input type="button" id="opener" value="游戏规则"></input>
+			</br>
+			<input type="button" value="开始游戏" id="a_btn" onclick="f()" /></br>
+			<input type="button" value="更多游戏" id="b_btn" onclick="h5api.moreGame" />
+		</div>
+
+		<div id="dialog" title="提示">
+			<p> 1.注意时间，不要太贪心哦，不然会什么都没有的。</br>
+				2.操控奔跑的小人来拿糖果，在24秒内拿糖果并走出门口。</br>
+				3.红色糖果上回出现蓝色果实，拿到它分数回更高哦。</br>
+				4.拿到的糖果会有分数，按分数等级到商店换糖果。</br>
+				5.先查看分数等级，在点击商店兑换奖品</br>
+			</p>
+
+		</div>
+
+	</body>
+
+</html>

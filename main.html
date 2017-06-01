@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>开始</title>
+		<style type="text/css">
+			body {
+				padding-top: 10px;
+			}
+			
+			.all_bg {
+				width: 800px;
+				height: 600px;
+				margin: 0px auto;
+			}
+			
+			#allcanvas {
+				position: relative;
+				width: 800px;
+				height: 6000px;
+				margin: 0px;
+			}
+			
+			#canvas1 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				z-index: 1;
+			}
+			
+			#canvas2 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				z-index: 0;
+			}
+			
+			#canvas3 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				z-index: 2;
+			}
+			
+			#btn1 {
+				text-align: center;
+			}
+		</style>
+
+		<script language="javascript" type="text/javascript">
+			var i = 24;
+			var intervalid;
+			intervalid = setInterval("fun()", 1000);
+
+			function fun() {
+				if(i == 0) {
+					window.location.href = "index.html";
+					clearInterval(intervalid);
+				}
+				if(mom.y > canHeight * 0.9) {
+					if(data.score < 100) {
+						window.location.href = "fine.html?id=Small";
+					}
+					if(data.score >= 100 && data.score <= 500) {
+						window.location.href = "fine.html?id=less";
+					}
+					if(data.score > 500 && data.score <= 1000) {
+						window.location.href = "fine.html?id=middle";
+					}
+					if(data.score > 1000 && data.score <= 2000) {
+						window.location.href = "fine.html?id=good";
+					}
+					if(data.score > 2000 && data.score <= 3000) {
+						window.location.href = "fine.html?id=fine";
+					}
+					if(data.score > 3000 && data.score <= 5000) {
+						window.location.href = "fine.html?id=preferably";
+					}
+
+					clearInterval(intervalid);
+				} else {
+					document.getElementById("mes").innerHTML = i;
+					i--;
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div> <span id="mes">24</span>
+			<input type="hidden" name="num" id="num" />
+		</div>
+
+		<div class="all_bg">
+
+			<div id="allcanvas">
+				<canvas id="canvas1" width="800" height="600"></canvas>
+				<canvas id="canvas2" width="800" height="600"></canvas>
+				<canvas id="canvas3" width="800" height="600"></canvas>
+			</div>
+
+		</div>
+		<script type="text/javascript" src="js/maingame.js"></script>
+		<script type="text/javascript" src="js/backgound.js"></script>
+		<script type="text/javascript" src="js/commonFunctions.js"></script>
+		<script type="text/javascript" src="js/table.js"></script>
+		<script type="text/javascript" src="js/fruit.js"></script>
+		<script type="text/javascript" src="js/mom.js"></script>
+		<script type="text/javascript" src="js/collision.js"></script>
+		<script type="text/javascript" src="js/door.js"></script>
+		<script type="text/javascript" src="js/data.js"></script>
+	</body>
+
+</html>
